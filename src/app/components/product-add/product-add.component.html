@@ -1,0 +1,38 @@
+<div>
+  <div style="font-size: 24px;padding: 16px 0;">Add Product</div>
+  <div [formGroup]="productForm" fxLayout='row wrap'>
+    <mat-form-field fxFlex=100 appearance="outline">
+      <mat-label>productName</mat-label>
+      <input formControlName='productName' matInput placeholder="productName">
+      <mat-error fxFlex
+        *ngIf="!productForm.controls['productName'].valid && productForm.controls['productName'].touched">
+        {{ getErrorMessage(productForm.controls['productName'], 'productName') }} </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex=100 appearance="outline">
+      <mat-label>price</mat-label>
+      <input type="number" formControlName='price' matInput placeholder="price">
+      <mat-error fxFlex *ngIf="!productForm.controls['price'].valid && productForm.controls['price'].touched">
+        {{ getErrorMessage(productForm.controls['price'], 'price') }} </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex=100 appearance="outline">
+      <mat-label>quantity</mat-label>
+      <input type="number" formControlName='quantity' matInput placeholder="quantity">
+      <mat-error fxFlex *ngIf="!productForm.controls['quantity'].valid && productForm.controls['quantity'].touched">
+        {{ getErrorMessage(productForm.controls['quantity'], 'quantity') }} </mat-error>
+    </mat-form-field>
+    <mat-form-field fxFlex=100 appearance="outline">
+      <mat-label>Select category</mat-label>
+      <mat-select formControlName="categoryId" [(value)]="selected">
+        <mat-option [value]="category._id" *ngFor="let category of categoryArray">
+          {{ category.categoryName }}
+        </mat-option>
+      </mat-select>
+      <mat-error fxFlex *ngIf="!productForm.controls['categoryId'].valid && productForm.controls['categoryId'].touched">
+        {{ getErrorMessage(productForm.controls['categoryId'], 'category name') }} </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout fxLayoutAlign='end center'>
+    <button class="button-click" (click)="Save()" mat-flat-button>Save</button>
+
+  </div>
+</div>

@@ -11,6 +11,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterial } from './app.material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { DisplayComponent } from './components/display/display.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
     ResetPasswordComponent,
     ForgotPasswordComponent,
     HomeComponent,
+    DisplayComponent,
+    ProductAddComponent,
 
   ],
   imports: [
@@ -30,6 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule
   ],
   providers: [],
+  entryComponents:[ProductAddComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

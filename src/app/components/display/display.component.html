@@ -1,0 +1,7 @@
+<div fxLayout fxLayoutGap=20px>
+  <div *ngFor='let card of product' class="card">
+    <div class="name">{{card.productName}}</div>
+    <div class="price">{{card.price | currency:'INR'}}</div>
+
+  </div>
+</div>
