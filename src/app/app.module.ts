@@ -10,6 +10,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterial } from './app.material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
+    HomeComponent,
 
   ],
   imports: [

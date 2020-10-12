@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilityService {
 
-  constructor() { }
+  constructor(private _snackBar: MatSnackBar) { }
   getErrorMessage(control: FormControl, alias: string) {
     if (control.errors) {
       if (control.errors.required) {
@@ -46,4 +47,11 @@ export class UtilityService {
       }
     });
   }
+
+  openSnackBar(message: string, action: string, duration = 3000) {
+    this._snackBar.open(message, action, {
+      duration: duration,
+    });
+  }
+
 }

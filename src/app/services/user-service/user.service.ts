@@ -9,7 +9,11 @@ export class UserService {
   baseUrl = environment.baseUrl
   constructor(private httpService: HttpService) { }
   login(data) {
-    return this.httpService.postService(data,`http://localhost:3000/login`)
+    return this.httpService.postService(data, `${this.baseUrl}login`)
+
+  }
+  register(data) {
+    return this.httpService.postService(data, `${this.baseUrl}register`)
 
   }
 }

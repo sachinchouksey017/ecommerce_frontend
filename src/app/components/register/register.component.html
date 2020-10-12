@@ -1,3 +1,42 @@
-<p>
-  register works!
-</p>
+<div class="login" fxLayout fxLayoutAlign='center center'>
+  <mat-card class="card">
+
+    <div class="text">
+      Create your Account
+    </div>
+    <div [formGroup]="registerForm" fxLayout='row wrap'>
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>firstName</mat-label>
+        <input formControlName='firstName' matInput placeholder="Placeholder">
+        <mat-error fxFlex
+          *ngIf="!registerForm.controls['firstName'].valid && registerForm.controls['firstName'].touched">
+          {{ getErrorMessage(registerForm.controls['firstName'], 'firstName') }} </mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>lastName</mat-label>
+        <input formControlName='lastName' matInput placeholder="Placeholder">
+        <mat-error fxFlex *ngIf="!registerForm.controls['lastName'].valid && registerForm.controls['lastName'].touched">
+          {{ getErrorMessage(registerForm.controls['lastName'], 'lastName') }} </mat-error>
+      </mat-form-field>
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>email</mat-label>
+        <input formControlName='email' matInput placeholder="Placeholder">
+        <mat-error fxFlex *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+          {{ getErrorMessage(registerForm.controls['email'], 'email') }} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>password</mat-label>
+        <input formControlName='password' type="password" matInput placeholder="Placeholder">
+        <mat-error fxFlex *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">
+          {{ getErrorMessage(registerForm.controls['password'], 'password') }} </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutAlign='space-between center'>
+      <button routerLink='../login' class="create-link" mat-button>Sign in instead</button>
+      <button class="button-click" (click)="register()" mat-flat-button>Register</button>
+
+    </div>
+  </mat-card>
+
+</div>
