@@ -19,7 +19,11 @@
       </mat-form-field>
     </div>
     <div fxLayout fxLayoutAlign='space-between center'>
-      <button routerLink='../register' class="create-link" mat-button>Create account</button>
+      <div fxLayout='column'>
+        <button routerLink='../register' class="create-link" mat-button>Create account</button>
+        <button routerLink='../forgot' class="create-link" mat-button>Forgot account</button>
+
+      </div>
       <button class="button-click" (click)="login()" mat-flat-button>Login</button>
 
     </div>

@@ -16,11 +16,11 @@ const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'forget',
+    path: 'forgot',
     component: ForgotPasswordComponent
   },
   {
-    path: 'reset',
+    path: 'reset/:token',
     component: ResetPasswordComponent
   },
   {
