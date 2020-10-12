@@ -1,0 +1,28 @@
+<div class="login" fxLayout fxLayoutAlign='center center'>
+  <mat-card class="card">
+    <div class="text">
+      login
+    </div>
+    <div [formGroup]="loginForm" fxLayout='row wrap'>
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>email</mat-label>
+        <input formControlName='email' matInput placeholder="Placeholder">
+        <mat-error fxFlex *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+          {{ getErrorMessage(loginForm.controls['email'], 'email') }} </mat-error>
+      </mat-form-field>
+
+      <mat-form-field fxFlex=100 appearance="outline">
+        <mat-label>password</mat-label>
+        <input formControlName='password' matInput placeholder="Placeholder">
+        <mat-error fxFlex *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+          {{ getErrorMessage(loginForm.controls['password'], 'password') }} </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxLayout fxLayoutAlign='space-between center'>
+      <button routerLink='../register' class="create-link" mat-button>Create account</button>
+      <button class="button-click" (click)="login()" mat-flat-button>Login</button>
+
+    </div>
+  </mat-card>
+
+</div>

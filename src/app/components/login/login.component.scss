@@ -1,0 +1,21 @@
+.login {
+    height: 100%;
+    .card {
+        border-radius: 8px;
+        border: 1px solid #dadce0;
+        min-width: 480px;
+        padding: 45px 40px;
+        box-sizing: border-box;
+        .text {
+            font-size: 30px;
+            margin-bottom: 24px;
+        }
+        .create-link {
+            color: #1a73e8;
+        }
+        .button-click {
+            background-color: #1a73e8;
+            color: white;
+        }
+    }
+}
