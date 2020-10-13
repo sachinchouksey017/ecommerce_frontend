@@ -7,12 +7,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterial } from './app.material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { DisplayComponent } from './components/display/display.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     HomeComponent,
     DisplayComponent,
     ProductAddComponent,
+    AddCategoryComponent,
 
   ],
   imports: [
@@ -34,7 +36,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     HttpClientModule
   ],
   providers: [],
-  entryComponents:[ProductAddComponent],
+  entryComponents: [ProductAddComponent, AddCategoryComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

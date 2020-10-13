@@ -1,7 +1,20 @@
-<div fxLayout fxLayoutGap=20px>
+<div *ngIf='product.length > 0' fxLayout='row wrap' fxLayoutGap=20px>
   <div *ngFor='let card of product' class="card">
     <div class="name">{{card.productName}}</div>
     <div class="price">{{card.price | currency:'INR'}}</div>
+    <div class="icon" fxLayout fxLayoutAlign='end center'>
+      <button class="bottom-icon" (click)='editCard(card)' mat-icon-button color="primary"
+        aria-label="Example icon button with a home icon">
+        <mat-icon>edit</mat-icon>
 
+      </button><button (click)='deleteCard(card)' class="bottom-icon" mat-icon-button color="primary"
+        aria-label="Example icon button with a home icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </div>
   </div>
+</div>
+<div fxLayout fxLayoutAlign='center center' *ngIf='noProductCheck && product.length == 0'>
+  <img src="../../../assets/images/noproduct.png" alt="">
 </div>

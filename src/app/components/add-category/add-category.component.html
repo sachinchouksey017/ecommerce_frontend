@@ -1,0 +1,16 @@
+<div>
+  <div style="font-size: 24px;padding: 16px 0;">Add Category</div>
+  <div [formGroup]="categoryForm" fxLayout='row wrap'>
+    <mat-form-field fxFlex=100 appearance="outline">
+      <mat-label>categoryName</mat-label>
+      <input formControlName='categoryName' matInput placeholder="categoryName">
+      <mat-error fxFlex
+        *ngIf="!categoryForm.controls['categoryName'].valid && categoryForm.controls['categoryName'].touched">
+        {{ getErrorMessage(categoryForm.controls['categoryName'], 'categoryName') }} </mat-error>
+    </mat-form-field>
+  </div>
+  <div fxLayout fxLayoutAlign='end center'>
+    <button class="button-click" (click)="save()" mat-flat-button>Save</button>
+
+  </div>
+</div>
